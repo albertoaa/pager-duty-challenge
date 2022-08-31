@@ -34,6 +34,11 @@ const Header = () => {
                 Incidents
               </a>
             </li>
+            <li className='nav-item'>
+              <a className='nav-link' href='/users'>
+                AddressBook
+              </a>
+            </li>
           </ul>
           <form className='d-flex' role='search'>
             <input
