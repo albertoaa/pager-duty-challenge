@@ -1,4 +1,5 @@
 import Header from '../components/Header';
+import SingleIncident from '../components/SingleIncident';
 
 const Incidents = ({ incidents }) => {
   return (
@@ -6,7 +7,7 @@ const Incidents = ({ incidents }) => {
       <Header />
       <h1>These are your most recent incidents</h1>
       <div className='container-fluid'>
-        <table class='table'>
+        <table className='table'>
           <thead>
             <tr>
               <th scope='col'>ID</th>
@@ -17,14 +18,7 @@ const Incidents = ({ incidents }) => {
           </thead>
           <tbody>
             {incidents.map((incident) => {
-              return (
-                <tr>
-                  <th scope='row'>{incident.id}</th>
-                  <td>{incident.title}</td>
-                  <td>{incident.summary}</td>
-                  <td>{incident.status}</td>
-                </tr>
-              );
+              return <SingleIncident incident={incident} key={incident.id} />;
             })}
           </tbody>
         </table>
