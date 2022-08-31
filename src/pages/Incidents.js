@@ -3,10 +3,12 @@ import Header from '../components/Header';
 import SingleIncident from '../components/SingleIncident';
 import AddIncident from '../components/AddIncident';
 
-const Incidents = ({ incidents }) => {
+const Incidents = ({ incidents, setIncidents }) => {
   const [showForm, setShowForm] = useState(false);
 
   const createIncident = (incident) => {
+    const newIncidents = [...incidents, incident];
+    setIncidents(newIncidents);
     setShowForm(false);
   };
   return (
@@ -21,7 +23,11 @@ const Incidents = ({ incidents }) => {
         >
           Add Incident
         </button>
-        {showForm && <AddIncident createIncident={createIncident} />}
+        {showForm && (
+          <AddIncident
+            createIncident={(incident) => createIncident(incident)}
+          />
+        )}
         <table className='table'>
           <thead>
             <tr>

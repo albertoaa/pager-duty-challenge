@@ -22,7 +22,12 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route
           path='/incidents'
-          element={<Incidents incidents={incidents} />}
+          element={
+            <Incidents
+              incidents={incidents}
+              setIncidents={(newIncidents) => setIncidents(newIncidents)}
+            />
+          }
         />
       </Routes>
     </div>
