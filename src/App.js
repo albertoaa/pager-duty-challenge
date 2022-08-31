@@ -10,7 +10,6 @@ const App = () => {
 
   useEffect(() => {
     getItems('/incidents', {
-      limit: 10,
       offset: 0,
       total: false,
       date_range: 'all',
