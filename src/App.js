@@ -10,7 +10,6 @@ const App = () => {
   const [incidents, setIncidents] = useState([]);
   const [users, setUsers] = useState([]);
   const [offset, setOffset] = useState(0);
-  const [more, setMore] = useState(false);
 
   const getIncidents = () => {
     getItems('/incidents', {
@@ -27,7 +26,6 @@ const App = () => {
       date_range: 'all',
     }).then((response) => {
       const allUsers = [...users, ...response.users];
-      console.log(allUsers.length);
       setUsers(allUsers);
       if (response.more) {
         setOffset((offset += 25));
