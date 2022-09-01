@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import Header from '../components/Header';
 import SingleUser from '../components/SingleUser';
+import Details from '../components/Details';
 
 const AddressBook = ({ users }) => {
+  const [showModal, setShowModal] = useState(true);
   return (
     <div className='container'>
       <Header />
@@ -22,6 +25,7 @@ const AddressBook = ({ users }) => {
           </tbody>
         </table>
       </div>
+      {showModal && <Details />}
     </div>
   );
 };
